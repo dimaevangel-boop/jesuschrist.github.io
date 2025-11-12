@@ -82,10 +82,14 @@ function UpdateButtonsLayout() {
     const verticalCenterY = 450;
     const windowWidth = window.innerWidth;
     const windowScale = windowWidth/1080.0;
+    
+    document.getElementById("TestText").innerHTML = "Window Width: " +windowWidth + " | Scale: " +windowScale;
+    
     //if (windowWidth >= 768) {
         const x1 = Math.round(windowWidth/2 - (buttonWidth+buttonMarginX*windowScale)) +"px";
         const x3 = Math.round(windowWidth/2 +(buttonWidth+buttonMarginX*windowScale)) +"px";
         const y = Math.round(horizontalY*windowScale) +"px";
+        //const y = Math.round(horizontalY) +"px";
         SetX("JesusChristButton", x1);
         SetX("JesusChristClickedButton", x1);
         SetX("LoveButton", "50%");
@@ -117,5 +121,4 @@ function UpdateButtonsLayout() {
     }*/
 }
 document.addEventListener('DOMContentLoaded', UpdateButtonsLayout);
-
 window.addEventListener('resize', UpdateButtonsLayout);
