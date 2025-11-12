@@ -54,7 +54,34 @@ a:focus {
     outline-color: lightgreen;
 }
 
+/* Tooltip */
+
+#Tooltip {
+    position: absolute;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, transform 0.2s;
+    pointer-events: none; /* Allows clicks to pass through when hidden */
+
+	line-height: 100%;
+	
+	font-size: 18px;
+	
+	background-color: #e2ffea;
+	color: #4d5d76;
+	text-align: center;
+	border-radius: 6px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 16px;
+	padding-right: 16px;
+    
+    max-width: 250px;
+}
+
 /* Buttons */
+
 .clickedButton {
     font-family: Basic;
     font-size: 21px;
@@ -181,32 +208,6 @@ a:focus {
 	text-underline-offset: 2px;
 }
 
-.basicTextDescribed .tooltipText {
-	line-height: 100%;
-	
-	font-size: 18px;
-	
-	visibility: hidden;
-	/*background-color: #f5f8ff;*/
-	background-color: #e2ffea;
-	color: #4d5d76;
-	text-align: center;
-	border-radius: 6px;
-	padding-top: 4px;
-	padding-bottom: 4px;
-	padding-left: 16px;
-	padding-right: 16px;
-	
-	/* Position the tooltip */
-	position: absolute;
-	z-index: 1;
-	margin-top: 40px;
-}
-
-.basicTextDescribed:hover .tooltipText {
-	visibility: visible;
-}
-
 .handwrittenText {
     /*font-size: 1.53vw;*/
     font-size: 23px;
@@ -306,60 +307,11 @@ a:focus {
 	text-underline-offset: 2px;
 }
 
-.handwrittenTextDescribed .tooltipText {
-	font-family: Basic;
-    /*font-size: 1.5vw;*/
-    font-size: 21px;
-	font-weight: 100;
-	/*color: #2d343f;*/
-    color: #4d5d76;
-
-	line-height: 100%;
-	
-	font-size: 18px;
-	
-	visibility: hidden;
-	/*background-color: #f5f8ff;*/
-	background-color: #e2ffea;
-	color: #4d5d76;
-	text-align: center;
-	border-radius: 6px;
-	padding-top: 4px;
-	padding-bottom: 4px;
-	padding-left: 16px;
-	padding-right: 16px;
-	
-	/* Position the tooltip */
-	position: absolute;
-	z-index: 1;
-	margin-top: 50px;
-}
-
-.handwrittenTextDescribed:hover .tooltipText {
-	visibility: visible;
-}
-
 .handwrittenTextSmallerDescribed {
-    /*font-size: 1.53vw;*/
     font-size: 21px;
-    /*color: #61728e;*/
-    /*color: #ccdd55;*/
-    /*color: #ddee77;*/
-    /*color: #000000;*/
     color: #29916f;
-    /*text-shadow: 0 0 4px #0ff;*/
-    /*text-shadow: 0 0 4px #ffffff;*/
     font-family: Handwriting;
     font-weight: 1000;
-
-	/*-webkit-text-stroke-width: 1px;
-	-webkit-text-stroke-color: black;*/
-
-    /*-webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 3px black;*/
-     
-   /*text-shadow: #000 0px 0px 2px;
-    -webkit-font-smoothing: antialiased;*/
 }
 
 .handwrittenTextSmallerDescribed:hover {
@@ -369,44 +321,10 @@ a:focus {
 	text-underline-offset: 2px;
 }
 
-.handwrittenTextSmallerDescribed .tooltipText {
-	font-family: Basic;
-    /*font-size: 1.5vw;*/
-    font-size: 21px;
-	font-weight: 100;
-	/*color: #2d343f;*/
-    color: #4d5d76;
-
-	line-height: 100%;
-	
-	font-size: 18px;
-	
-	visibility: hidden;
-	/*background-color: #f5f8ff;*/
-	background-color: #e2ffea;
-	color: #4d5d76;
-	text-align: center;
-	border-radius: 6px;
-	padding-top: 4px;
-	padding-bottom: 4px;
-	padding-left: 16px;
-	padding-right: 16px;
-	
-	/* Position the tooltip */
-	position: absolute;
-	z-index: 1;
-	margin-top: 50px;
-}
-
-.handwrittenTextSmallerDescribed:hover .tooltipText {
-	visibility: visible;
-}
-
 .referenceText {
     white-space: pre;
     
     font-family: Reference;
-    /*font-size: 1.5vw;*/
     font-size: 13px;
     font-weight: 100;
     color: #4d5d76;
