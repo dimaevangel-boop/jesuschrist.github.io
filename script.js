@@ -31,12 +31,6 @@ function ShowSection(sectionName) {
         Show(sectionName+"ClickedButton");
     }
     
-    // Footer visibility:
-    /*if (sectionName == "Church")
-        Hide("Footer");
-    else
-        Show("Footer");*/
-    
     // Updating section url:
     const newUrl = window.location.pathname + '#' + sectionName;
     history.pushState({ section: sectionName }, '', newUrl);
