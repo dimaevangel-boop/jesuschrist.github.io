@@ -222,12 +222,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Repositioning Tooltip on scroll/resize for reliability:
     window.addEventListener('scroll', () => {
         if (ActiveDescribedElem) {
-            positionTooltip(ActiveDescribedElem);
+            PositionTooltip(ActiveDescribedElem);
         }
     });
     window.addEventListener('resize', () => {
         if (ActiveDescribedElem) {
-            positionTooltip(ActiveDescribedElem);
+            PositionTooltip(ActiveDescribedElem);
         }
     });
 });
