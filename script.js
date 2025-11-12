@@ -73,23 +73,24 @@ function SetY(elementName, y) {
     document.getElementById(elementName).style.top = y;
 }
 
+function SetTextColor(elementName, color) {
+    document.getElementById(elementName).style.color = color;
+}
+
 function UpdateButtonsLayout() {
     const buttonWidth = 170;
     const buttonHeight = 38;
     const buttonMarginX = 25;
     const buttonMarginY = 15;
     const horizontalY = 500;
-    const verticalCenterY = 450;
+    const verticalCenterY = 425;
     const windowWidth = window.innerWidth;
     const windowScale = windowWidth/1080.0;
     
-    document.getElementById("TestText").innerHTML = "Window Width: " +windowWidth + " | Scale: " +windowScale;
-    
     if (windowWidth >= 768) {
-        const x1 = Math.round(windowWidth/2 - (buttonWidth+buttonMarginX*windowScale)) +"px";
-        const x3 = Math.round(windowWidth/2 +(buttonWidth+buttonMarginX*windowScale)) +"px";
+        const x1 = Math.round(windowWidth*0.5 - (buttonWidth+buttonMarginX*windowScale)) +"px";
+        const x3 = Math.round(windowWidth*0.5 +(buttonWidth+buttonMarginX*windowScale)) +"px";
         const y = Math.round(horizontalY*windowScale) +"px";
-        //const y = Math.round(horizontalY) +"px";
         SetX("JesusChristButton", x1);
         SetX("JesusChristClickedButton", x1);
         SetX("LoveButton", "50%");
@@ -102,6 +103,10 @@ function UpdateButtonsLayout() {
         SetY("LoveClickedButton", y);
         SetY("ChurchButton", y);
         SetY("ChurchClickedButton", y);
+
+        SetTextColor("JesusChristClickedButton", 'rgb(200,200,200)');
+        SetTextColor("LoveClickedButton", 'rgb(200,200,200)');
+        SetTextColor("ChurchClickedButton", 'rgb(200,200,200)');
     } else {
         const y2 = Math.round(verticalCenterY*windowScale) +"px";
         const y1 = Math.round((verticalCenterY -(buttonHeight/windowScale+buttonMarginY*windowScale))*windowScale) +"px";
@@ -118,6 +123,10 @@ function UpdateButtonsLayout() {
         SetY("LoveClickedButton", y2);
         SetY("ChurchButton", y3);
         SetY("ChurchClickedButton", y3);
+        
+        SetTextColor("JesusChristClickedButton", 'rgb(75,75,75)');
+        SetTextColor("LoveClickedButton", 'rgb(200,200,200)');
+        SetTextColor("ChurchClickedButton", 'rgb(200,200,200)');
     }
 }
 document.addEventListener('DOMContentLoaded', UpdateButtonsLayout);
