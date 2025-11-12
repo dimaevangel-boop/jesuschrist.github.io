@@ -82,7 +82,7 @@ function UpdateButtonsLayout() {
     const verticalCenterY = 450;
     const windowWidth = window.innerWidth;
     const windowScale = windowWidth/1080.0;
-    if (windowWidth >= 768) {
+    //if (windowWidth >= 768) {
         const x1 = Math.round(windowWidth/2 - (buttonWidth+buttonMarginX*windowScale)) +"px";
         const x3 = Math.round(windowWidth/2 +(buttonWidth+buttonMarginX*windowScale)) +"px";
         const y = Math.round(horizontalY*windowScale) +"px";
@@ -98,7 +98,7 @@ function UpdateButtonsLayout() {
         SetY("LoveClickedButton", y);
         SetY("ChurchButton", y);
         SetY("ChurchClickedButton", y);
-    } else {
+    /*} else {
         const y2 = Math.round(verticalCenterY*windowScale) +"px";
         const y1 = Math.round((verticalCenterY -(buttonHeight/windowScale+buttonMarginY*windowScale))*windowScale) +"px";
         const y3 = Math.round((verticalCenterY +(buttonHeight/windowScale+buttonMarginY*windowScale))*windowScale) +"px";
@@ -114,7 +114,8 @@ function UpdateButtonsLayout() {
         SetY("LoveClickedButton", y2);
         SetY("ChurchButton", y3);
         SetY("ChurchClickedButton", y3);
-    }
+    }*/
 }
 document.addEventListener('DOMContentLoaded', UpdateButtonsLayout);
+
 window.addEventListener('resize', UpdateButtonsLayout);
