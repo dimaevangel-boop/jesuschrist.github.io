@@ -104,6 +104,13 @@ function UpdateButtonsLayout() {
     const windowWidth = window.innerWidth;
     const windowScale = windowWidth/1080.0;
     
+    const sectionPanelHeight = 48;
+    const sectionPanelSidePadding = 48;
+    SetWidth("SectionPanel", windowWidth -sectionPanelHeight*windowScale*2+"px");
+    SetX("SectionPanel", sectionPanelSidePadding*windowScale+"px");
+    SetHeight("SectionPanel", sectionPanelHeight*windowScale+"px");
+    SetY("SectionPanel", CFrontImageHeight*(windowWidth/CFrontImageWidth)-9-sectionPanelHeight*windowScale+"px");
+
     SetX("LoveText", windowWidth*0.5+"px");
     SetY("LoveText", 420*windowScale+"px");
     
@@ -116,48 +123,6 @@ function UpdateButtonsLayout() {
     SetFontSize("CommandmentsButton", buttonFontSize);
     SetFontSize("BaptismButton", buttonFontSize);
     SetFontSize("AboutUsButton", buttonFontSize);
-
-    const sectionPanelHeight = 48;
-    const sectionPanelSidePadding = 48;
-    SetWidth("SectionPanel", windowWidth -sectionPanelHeight*windowScale*2+"px");
-    SetX("SectionPanel", sectionPanelSidePadding*windowScale+"px");
-    SetHeight("SectionPanel", sectionPanelHeight*windowScale+"px");
-    SetY("SectionPanel", CFrontImageHeight*(windowWidth/CFrontImageWidth)-9-sectionPanelHeight*windowScale+"px");
-    
-    
-    if (windowWidth >= 768) {
-        const x1 = Math.round(windowWidth*0.5 - (buttonWidth+buttonMarginX*windowScale)) +"px";
-        const x3 = Math.round(windowWidth*0.5 +(buttonWidth+buttonMarginX*windowScale)) +"px";
-        const y = Math.round(horizontalY*windowScale) +"px";
-        /*SetX("JesusAndLoveButton", x1);
-        SetX("JesusAndLoveClickedButton", x1);
-        SetX("GodButton", "50%");
-        SetX("GodClickedButton", "50%");
-        SetX("CommandmentsButton", x3);
-        SetX("CommandmentsClickedButton", x3);
-        SetY("JesusAndLoveButton", y);
-        SetY("JesusAndLoveClickedButton", y);
-        SetY("GodButton", y);
-        SetY("GodClickedButton", y);
-        SetY("CommandmentsButton", y);
-        SetY("CommandmentsClickedButton", y);*/
-    } else {
-        const y2 = Math.round(verticalCenterY*windowScale) +"px";
-        const y1 = Math.round((verticalCenterY -(buttonHeight/windowScale+buttonMarginY*windowScale))*windowScale) +"px";
-        const y3 = Math.round((verticalCenterY +(buttonHeight/windowScale+buttonMarginY*windowScale))*windowScale) +"px";
-        /*SetX("JesusAndLoveButton", "50%");
-        SetX("JesusAndLoveClickedButton", "50%");
-        SetX("GodButton", "50%");
-        SetX("GodClickedButton", "50%");
-        SetX("CommandmentsButton", "50%");
-        SetX("CommandmentsClickedButton", "50%");
-        SetY("JesusAndLoveButton", y1);
-        SetY("JesusAndLoveClickedButton", y1);
-        SetY("GodButton", y2);
-        SetY("GodClickedButton", y2);
-        SetY("CommandmentsButton", y3);
-        SetY("CommandmentsClickedButton", y3);*/
-    }
 }
 document.addEventListener('DOMContentLoaded', UpdateButtonsLayout);
 window.addEventListener('resize', UpdateButtonsLayout);
