@@ -31,12 +31,15 @@
 
 <div class="main" style="width: 100%; background-image: url('../images/jesuscross.png'); background-size: contain; background-repeat: no-repeat; background-color: #ffffff">
 
-    <span class="clickedButton" id="JesusAndLoveClickedButton"><nobr>Ісус і Любов</nobr></span>
-    <span class="clickedButton" id="GodClickedButton"><nobr>Бог</nobr></span>
-    <span class="clickedButton" id="CommandmentsClickedButton"><nobr>Заповіді</nobr></span>
-    <button class="button" onclick="ShowSection('JesusAndLove')" type="button" id="JesusAndLoveButton">Ісус і Любов</button>
-    <button class="button" onclick="ShowSection('God')" type="button" id="GodButton">Бог</button>
-    <button class="button" onclick="ShowSection('Commandments')" type="button" id="CommandmentsButton">Заповіді</button>
+    <p id="LoveText"><nobr><span class=handwrittenTextWhite id="LoveText1">Бог є Любов </span><span class=handwrittenTextSmallerWhite id="LoveText2">(1 Івана 4:16)</span></nobr></p>
+
+    <div class="sectionPanel" id="SectionPanel">
+        <button class="sectionButton" onclick="ShowSection('JesusAndLove')" id="JesusAndLoveButton"><nobr>Ісус і Любов</nobr></button>
+        <button class="sectionButton" onclick="ShowSection('God')" id="GodButton">Бог</button>
+        <button class="sectionButton" onclick="ShowSection('Commandments')" id="CommandmentsButton">Заповіді</button>
+        <button class="sectionButton" onclick="ShowSection('Baptism')" id="BaptismButton">Хрещення</button>
+        <button class="sectionButton" onclick="ShowSection('AboutUs')" id="AboutUsButton"><nobr>Про нас</nobr></button>
+    </div>
 
     <span id="Tooltip"></span>
 
@@ -154,6 +157,8 @@
             <p><span class=handwrittenText>Природне наповнення кожного серця, як задумане Богом: Любов!</span>&nbsp</p>
 					
 			<p><span class=handwrittenText>Любов Вічна!</span></p>
+            
+            <p><button class="gotoButton" onclick="GotoSection('God')"><nobr>Читати далі ...</nobr></button></p>
 
         </div>
 
@@ -239,6 +244,8 @@
             
             <p><span class=handwrittenText>(Щоби кожний із нас перебував у Любові, не словами одними а дією, як лілія у воді!)</span>&nbsp</p>
 
+            <p><button class="gotoButton" onclick="GotoSection('Commandments')"><nobr>Читати далі ...</nobr></button></p>
+
         </div>
 
         <div class="basicText" style="padding-left: 0%;" id="CommandmentsSection">
@@ -321,6 +328,8 @@
             
 			<p><span class=handwrittenText>Будьте завзяті, благовістіть цю Добру Новину усім! (Бо кожний має право почути!)</span>&nbsp</p>
 			
+            <p><button class="gotoButton" onclick="GotoSection('Baptism')"><nobr>Читати далі ...</nobr></button></p>
+
         </div>
 
         <div class="basicText" style="padding-left: 0%;" id="BaptismSection">
@@ -367,9 +376,16 @@
 
             <p><span class=handwrittenText>Хай серце кожного читача освітлює Любов!</span>&nbsp</p>
 
+            <p><span class=handwrittenText></span>&nbsp</p>
+
+            <p><button class="gotoButton" onclick="GotoSection('AboutUs')"><nobr>Перейти до сторінки "Про нас".</nobr></button></p>
+
         </div>
 
         <div class="basicText" style="padding-left: 0%;" id="AboutUsSection">
+
+            <p>Ця секція ще не зроблена.</p>
+
         </div>
 
     </div>

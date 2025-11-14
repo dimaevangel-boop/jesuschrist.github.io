@@ -1,3 +1,109 @@
+#LoveText {
+    position: absolute;
+    
+    transform: translate(-50%, -50%);
+}
+
+.gotoButton {
+    border: none;
+    
+    font-size: 23px;
+    color: #39a5e6;
+    font-family: Handwriting;
+    font-weight: 1000;
+    
+    padding: 0px;
+
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.gotoButton:hover {
+    color: #2e79a5;
+
+    transition: background-color 0.0s ease;
+    
+    text-decoration: underline;
+
+    cursor: pointer;
+}
+
+.gotoButton:active {
+}
+
+.gotoButton:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.gotoButton:focus-visible {
+    outline-color: lightgreen;
+}
+
+.sectionPanel {
+    background: #00000012;
+    margin: 0;
+    
+    position: absolute;
+    
+    padding-top: 0;
+    margin-top: 0;
+    
+    display: flex;
+}
+
+.sectionButton {
+    border: none;
+    
+    font-family: Basic;
+    font-size: 21px;
+    font-weight: 100;
+    color: white;
+
+    background-color: rgba(0, 0, 0, 0);
+
+    width: 100%;
+    height: 100%;
+    
+    text-align: center;
+    
+    transition: background-color 0.15s ease;
+}
+
+.sectionButton:hover {
+    background: white;
+    color: #4d5d76;
+
+    transition: background-color 0.15s ease;
+    
+    text-decoration-line: none;
+
+    cursor: pointer;
+}
+
+.sectionButton:active {
+    border: none;
+
+    background: skyblue;
+    color: white;
+
+    transition: background-color 0.15s ease;
+}
+
+.sectionButton:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.sectionButton:focus-visible {
+    outline-color: lightgreen;
+}
+
+.sectionButton[disabled] {
+    color: rgb(200,200,200);
+}
+
+.sectionButton[disabled]:hover {
+    color: rgb(200,200,200);
+}
+
 /* Fonts */
 
 @font-face {
@@ -165,14 +271,14 @@ a:focus {
 }
 
 .basicText p {
-	font-family: Basic;
+    font-family: Basic;
     /*font-size: 1.5vw;*/
     font-size: 21px;
-	font-weight: 100;
-	/*color: #2d343f;*/
+    font-weight: 100;
+    /*color: #2d343f;*/
     color: #4d5d76;
     /*color: #4c5c76;*/
-	/*color: #ffffff;*/
+    /*color: #ffffff;*/
 
 	/*-webkit-text-stroke-width: 1px;
 	-webkit-text-stroke-color: black;*/
@@ -209,49 +315,37 @@ a:focus {
 }
 
 .handwrittenText {
-    /*font-size: 1.53vw;*/
     font-size: 23px;
-    /*color: #61728e;*/
-    /*color: #ccdd55;*/
-    /*color: #ddee77;*/
-    /*color: #000000;*/
     color: #2d343f;
-    /*text-shadow: 0 0 4px #0ff;*/
-    /*text-shadow: 0 0 4px #ffffff;*/
     font-family: Handwriting;
     font-weight: 1000;
-
-	/*-webkit-text-stroke-width: 1px;
-	-webkit-text-stroke-color: black;*/
-
-    /*-webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 3px black;*/
-     
-   /*text-shadow: #000 0px 0px 2px;
-    -webkit-font-smoothing: antialiased;*/
 }
 
 .handwrittenTextSmaller {
-    /*font-size: 1.53vw;*/
     font-size: 21px;
-    /*color: #61728e;*/
-    /*color: #ccdd55;*/
-    /*color: #ddee77;*/
-    /*color: #000000;*/
     color: #2d343f;
-    /*text-shadow: 0 0 4px #0ff;*/
-    /*text-shadow: 0 0 4px #ffffff;*/
+    font-family: Handwriting;
+    font-weight: 1000;
+}
+
+.handwrittenTextWhite {
+    font-size: 23px;
+    color: #fff;
     font-family: Handwriting;
     font-weight: 1000;
 
-	/*-webkit-text-stroke-width: 1px;
-	-webkit-text-stroke-color: black;*/
+   text-shadow: #ccc 2px 2px 2px;
+    -webkit-font-smoothing: antialiased;
+}
 
-    /*-webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 3px black;*/
-     
-   /*text-shadow: #000 0px 0px 2px;
-    -webkit-font-smoothing: antialiased;*/
+.handwrittenTextSmallerWhite {
+    font-size: 21px;
+    color: #fff;
+    font-family: Handwriting;
+    font-weight: 1000;
+
+   text-shadow: #ccc 2px 2px 2px;
+    -webkit-font-smoothing: antialiased;
 }
 
 .handwrittenTextSmaller2 {

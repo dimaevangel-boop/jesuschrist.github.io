@@ -1,3 +1,6 @@
+const CFrontImageWidth = 2048;
+const CFrontImageHeight = 1150;
+
 function Show(elementName) {
     document.getElementById(elementName).style.display = "block";
 }
@@ -6,18 +9,20 @@ function Hide(elementName) {
     document.getElementById(elementName).style.display = "none";
 }
 
-function HideAllSectionsAndClickedButtons() {
+function Enable(elementName) {
+    document.getElementById(elementName).disabled = false;
+}
+
+function Disable(elementName) {
+    document.getElementById(elementName).disabled = true;
+}
+
+function HideAllSections() {
     Hide("JesusAndLoveSection");
     Hide("GodSection");
     Hide("CommandmentsSection");
     Hide("BaptismSection");
     Hide("AboutUsSection");
-
-    Hide("JesusAndLoveClickedButton");
-    Hide("GodClickedButton");
-    Hide("CommandmentsClickedButton");
-    //Hide("BaptismClickedButton");
-    //Hide("AboutUsClickedButton");
 }
 
 let PrevSectionName;
@@ -25,14 +30,12 @@ let PrevSectionName;
 function ShowSection(sectionName) {
     if (PrevSectionName) {
         Hide(PrevSectionName+"Section");
-        Hide(PrevSectionName+"ClickedButton");
-        Show(PrevSectionName+"Button");
+        Enable(PrevSectionName+"Button");
     }
     PrevSectionName = sectionName;
     {
         Show(sectionName+"Section");
-        Hide(sectionName+"Button");
-        Show(sectionName+"ClickedButton");
+        Disable(sectionName+"Button");
     }
     
     // Updating section url:
@@ -40,8 +43,16 @@ function ShowSection(sectionName) {
     history.pushState({ section: sectionName }, '', newUrl);
 }
 
+function GotoSection(sectionName) {
+    ShowSection(sectionName);
+    window.scrollTo({
+        top: CFrontImageHeight*(window.innerWidth/CFrontImageWidth),
+        behavior: 'smooth'
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
-    HideAllSectionsAndClickedButtons();
+    HideAllSections();
     
     function showContentFromHash() {
         const hash = window.location.hash; 
@@ -71,8 +82,16 @@ function SetY(elementName, y) {
     document.getElementById(elementName).style.top = y;
 }
 
-function SetTextColor(elementName, color) {
-    document.getElementById(elementName).style.color = color;
+function SetWidth(elementName, width) {
+    document.getElementById(elementName).style.width = width;
+}
+
+function SetHeight(elementName, height) {
+    document.getElementById(elementName).style.height = height;
+}
+
+function SetFontSize(elementName, fontSize) {
+    document.getElementById(elementName).style.fontSize = fontSize;
 }
 
 function UpdateButtonsLayout() {
@@ -85,11 +104,32 @@ function UpdateButtonsLayout() {
     const windowWidth = window.innerWidth;
     const windowScale = windowWidth/1080.0;
     
+    SetX("LoveText", windowWidth*0.5+"px");
+    SetY("LoveText", 420*windowScale+"px");
+    
+    SetFontSize("LoveText1", 25*windowScale*0.5+25*0.5+"px");
+    SetFontSize("LoveText2", 17*windowScale*0.5+17*0.5+"px");
+
+    const buttonFontSize = 7*windowScale +12 +"px";
+    SetFontSize("JesusAndLoveButton", buttonFontSize);
+    SetFontSize("GodButton", buttonFontSize);
+    SetFontSize("CommandmentsButton", buttonFontSize);
+    SetFontSize("BaptismButton", buttonFontSize);
+    SetFontSize("AboutUsButton", buttonFontSize);
+
+    const sectionPanelHeight = 48;
+    const sectionPanelSidePadding = 48;
+    SetWidth("SectionPanel", windowWidth -sectionPanelHeight*windowScale*2+"px");
+    SetX("SectionPanel", sectionPanelSidePadding*windowScale+"px");
+    SetHeight("SectionPanel", sectionPanelHeight*windowScale+"px");
+    SetY("SectionPanel", CFrontImageHeight*(windowWidth/CFrontImageWidth)-9-sectionPanelHeight*windowScale+"px");
+    
+    
     if (windowWidth >= 768) {
         const x1 = Math.round(windowWidth*0.5 - (buttonWidth+buttonMarginX*windowScale)) +"px";
         const x3 = Math.round(windowWidth*0.5 +(buttonWidth+buttonMarginX*windowScale)) +"px";
         const y = Math.round(horizontalY*windowScale) +"px";
-        SetX("JesusAndLoveButton", x1);
+        /*SetX("JesusAndLoveButton", x1);
         SetX("JesusAndLoveClickedButton", x1);
         SetX("GodButton", "50%");
         SetX("GodClickedButton", "50%");
@@ -100,16 +140,12 @@ function UpdateButtonsLayout() {
         SetY("GodButton", y);
         SetY("GodClickedButton", y);
         SetY("CommandmentsButton", y);
-        SetY("CommandmentsClickedButton", y);
-
-        SetTextColor("JesusAndLoveClickedButton", 'rgb(200,200,200)');
-        SetTextColor("GodClickedButton", 'rgb(200,200,200)');
-        SetTextColor("CommandmentsClickedButton", 'rgb(200,200,200)');
+        SetY("CommandmentsClickedButton", y);*/
     } else {
         const y2 = Math.round(verticalCenterY*windowScale) +"px";
         const y1 = Math.round((verticalCenterY -(buttonHeight/windowScale+buttonMarginY*windowScale))*windowScale) +"px";
         const y3 = Math.round((verticalCenterY +(buttonHeight/windowScale+buttonMarginY*windowScale))*windowScale) +"px";
-        SetX("JesusAndLoveButton", "50%");
+        /*SetX("JesusAndLoveButton", "50%");
         SetX("JesusAndLoveClickedButton", "50%");
         SetX("GodButton", "50%");
         SetX("GodClickedButton", "50%");
@@ -120,11 +156,7 @@ function UpdateButtonsLayout() {
         SetY("GodButton", y2);
         SetY("GodClickedButton", y2);
         SetY("CommandmentsButton", y3);
-        SetY("CommandmentsClickedButton", y3);
-        
-        SetTextColor("JesusAndLoveClickedButton", 'rgb(75,75,75)');
-        SetTextColor("GodClickedButton", 'rgb(200,200,200)');
-        SetTextColor("CommandmentsClickedButton", 'rgb(200,200,200)');
+        SetY("CommandmentsClickedButton", y3);*/
     }
 }
 document.addEventListener('DOMContentLoaded', UpdateButtonsLayout);
