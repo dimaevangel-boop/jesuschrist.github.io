@@ -50,11 +50,8 @@
     
     display: flex;
     
-    left: 0;
-    width: 100%;
-    
-    padding-left: 5vw;
-    padding-right: 5vw;
+    left: 0px;
+    width: 0px;
 }
 
 .sectionButton {
