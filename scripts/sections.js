@@ -61,7 +61,8 @@ function UpdateButtonsLayout() {
         buttonFontSize = 7*windowScale +12 +"px";
     else
         buttonFontSize = Mix(12, 7*windowScale +12, (windowWidth-300)/(400-300))+"px";
-    SetFontSize("JesusAndLoveButton", buttonFontSize);
+    SetFontSize("JesusButton", buttonFontSize);
+    SetFontSize("LoveButton", buttonFontSize);
     SetFontSize("GodButton", buttonFontSize);
     SetFontSize("CommandmentsButton", buttonFontSize);
     SetFontSize("BaptismButton", buttonFontSize);
@@ -87,7 +88,8 @@ function Disable(elementName) {
 }
 
 function HideAllSections() {
-    Hide("JesusAndLoveSection");
+    Hide("JesusSection");
+    Hide("LoveSection");
     Hide("GodSection");
     Hide("CommandmentsSection");
     Hide("BaptismSection");
@@ -133,7 +135,7 @@ function InitSections() {
         if (sectionName && document.getElementById(sectionName+"Section")) {
             ShowSection(sectionName);
         } else {
-            ShowSection("JesusAndLove");
+            ShowSection("Jesus");
         }
     }
     
