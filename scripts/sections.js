@@ -105,8 +105,11 @@ function UpdateButtonsLayout() {
     const windowScale = windowWidth/1080.0;
     
     const sectionPanelHeight = 48;
-    const sectionPanelSidePadding = 48;
-    SetWidth("SectionPanel", windowWidth -sectionPanelHeight*windowScale*2+"px");
+    let sectionPanelSidePadding = 48;
+    //if (window.innerWidth < 768)
+        //sectionPanelSidePadding = 0;
+    
+    SetWidth("SectionPanel", windowWidth -sectionPanelSidePadding*windowScale*2+"px");
     SetX("SectionPanel", sectionPanelSidePadding*windowScale+"px");
     SetHeight("SectionPanel", sectionPanelHeight*windowScale+"px");
     SetY("SectionPanel", CFrontImageHeight*(windowWidth/CFrontImageWidth)-9-sectionPanelHeight*windowScale+"px");
