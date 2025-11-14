@@ -7,13 +7,17 @@ function Hide(elementName) {
 }
 
 function HideAllSectionsAndClickedButtons() {
-    Hide("JesusChristSection");
-    Hide("LoveSection");
-    Hide("ChurchSection");
+    Hide("JesusAndLoveSection");
+    Hide("GodSection");
+    Hide("CommandmentsSection");
+    Hide("BaptismSection");
+    Hide("AboutUsSection");
 
-    Hide("JesusChristClickedButton");
-    Hide("LoveClickedButton");
-    Hide("ChurchClickedButton");
+    Hide("JesusAndLoveClickedButton");
+    Hide("GodClickedButton");
+    Hide("CommandmentsClickedButton");
+    //Hide("BaptismClickedButton");
+    //Hide("AboutUsClickedButton");
 }
 
 let PrevSectionName;
@@ -46,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (sectionName && document.getElementById(sectionName+"Section")) {
             ShowSection(sectionName);
         } else {
-            ShowSection("JesusChrist");
+            ShowSection("JesusAndLove");
         }
     }
     
@@ -85,42 +89,42 @@ function UpdateButtonsLayout() {
         const x1 = Math.round(windowWidth*0.5 - (buttonWidth+buttonMarginX*windowScale)) +"px";
         const x3 = Math.round(windowWidth*0.5 +(buttonWidth+buttonMarginX*windowScale)) +"px";
         const y = Math.round(horizontalY*windowScale) +"px";
-        SetX("JesusChristButton", x1);
-        SetX("JesusChristClickedButton", x1);
-        SetX("LoveButton", "50%");
-        SetX("LoveClickedButton", "50%");
-        SetX("ChurchButton", x3);
-        SetX("ChurchClickedButton", x3);
-        SetY("JesusChristButton", y);
-        SetY("JesusChristClickedButton", y);
-        SetY("LoveButton", y);
-        SetY("LoveClickedButton", y);
-        SetY("ChurchButton", y);
-        SetY("ChurchClickedButton", y);
+        SetX("JesusAndLoveButton", x1);
+        SetX("JesusAndLoveClickedButton", x1);
+        SetX("GodButton", "50%");
+        SetX("GodClickedButton", "50%");
+        SetX("CommandmentsButton", x3);
+        SetX("CommandmentsClickedButton", x3);
+        SetY("JesusAndLoveButton", y);
+        SetY("JesusAndLoveClickedButton", y);
+        SetY("GodButton", y);
+        SetY("GodClickedButton", y);
+        SetY("CommandmentsButton", y);
+        SetY("CommandmentsClickedButton", y);
 
-        SetTextColor("JesusChristClickedButton", 'rgb(200,200,200)');
-        SetTextColor("LoveClickedButton", 'rgb(200,200,200)');
-        SetTextColor("ChurchClickedButton", 'rgb(200,200,200)');
+        SetTextColor("JesusAndLoveClickedButton", 'rgb(200,200,200)');
+        SetTextColor("GodClickedButton", 'rgb(200,200,200)');
+        SetTextColor("CommandmentsClickedButton", 'rgb(200,200,200)');
     } else {
         const y2 = Math.round(verticalCenterY*windowScale) +"px";
         const y1 = Math.round((verticalCenterY -(buttonHeight/windowScale+buttonMarginY*windowScale))*windowScale) +"px";
         const y3 = Math.round((verticalCenterY +(buttonHeight/windowScale+buttonMarginY*windowScale))*windowScale) +"px";
-        SetX("JesusChristButton", "50%");
-        SetX("JesusChristClickedButton", "50%");
-        SetX("LoveButton", "50%");
-        SetX("LoveClickedButton", "50%");
-        SetX("ChurchButton", "50%");
-        SetX("ChurchClickedButton", "50%");
-        SetY("JesusChristButton", y1);
-        SetY("JesusChristClickedButton", y1);
-        SetY("LoveButton", y2);
-        SetY("LoveClickedButton", y2);
-        SetY("ChurchButton", y3);
-        SetY("ChurchClickedButton", y3);
+        SetX("JesusAndLoveButton", "50%");
+        SetX("JesusAndLoveClickedButton", "50%");
+        SetX("GodButton", "50%");
+        SetX("GodClickedButton", "50%");
+        SetX("CommandmentsButton", "50%");
+        SetX("CommandmentsClickedButton", "50%");
+        SetY("JesusAndLoveButton", y1);
+        SetY("JesusAndLoveClickedButton", y1);
+        SetY("GodButton", y2);
+        SetY("GodClickedButton", y2);
+        SetY("CommandmentsButton", y3);
+        SetY("CommandmentsClickedButton", y3);
         
-        SetTextColor("JesusChristClickedButton", 'rgb(75,75,75)');
-        SetTextColor("LoveClickedButton", 'rgb(200,200,200)');
-        SetTextColor("ChurchClickedButton", 'rgb(200,200,200)');
+        SetTextColor("JesusAndLoveClickedButton", 'rgb(75,75,75)');
+        SetTextColor("GodClickedButton", 'rgb(200,200,200)');
+        SetTextColor("CommandmentsClickedButton", 'rgb(200,200,200)');
     }
 }
 document.addEventListener('DOMContentLoaded', UpdateButtonsLayout);
