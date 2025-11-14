@@ -23,6 +23,10 @@ function SetFontSize(elementName, fontSize) {
     document.getElementById(elementName).style.fontSize = fontSize;
 }
 
+function Mix(a, b, factor) {
+    return a*(1-factor) +b*factor;
+}
+
 function UpdateButtonsLayout() {
     const buttonWidth = 170;
     const buttonHeight = 38;
@@ -52,7 +56,11 @@ function UpdateButtonsLayout() {
     SetFontSize("LoveText1", 25*windowScale*0.5+25*0.5+"px");
     SetFontSize("LoveText2", 17*windowScale*0.5+17*0.5+"px");
 
-    const buttonFontSize = 7*windowScale +12 +"px";
+    let buttonFontSize
+    if (windowWidth >= 400)
+        buttonFontSize = 7*windowScale +12 +"px";
+    else
+        buttonFontSize = Mix(12, 7*windowScale +12, (windowWidth-300)/(400-300))+"px";
     SetFontSize("JesusAndLoveButton", buttonFontSize);
     SetFontSize("GodButton", buttonFontSize);
     SetFontSize("CommandmentsButton", buttonFontSize);
