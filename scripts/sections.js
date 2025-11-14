@@ -1,6 +1,67 @@
 const CFrontImageWidth = 2048;
 const CFrontImageHeight = 1150;
 
+//*** Buttons Layout ***
+
+function SetX(elementName, x) {
+    document.getElementById(elementName).style.left = x;
+}
+
+function SetY(elementName, y) {
+    document.getElementById(elementName).style.top = y;
+}
+
+function SetWidth(elementName, width) {
+    document.getElementById(elementName).style.width = width;
+}
+
+function SetHeight(elementName, height) {
+    document.getElementById(elementName).style.height = height;
+}
+
+function SetFontSize(elementName, fontSize) {
+    document.getElementById(elementName).style.fontSize = fontSize;
+}
+
+function UpdateButtonsLayout() {
+    const buttonWidth = 170;
+    const buttonHeight = 38;
+    const buttonMarginX = 25;
+    const buttonMarginY = 15;
+    const horizontalY = 500;
+    const verticalCenterY = 425;
+    const windowWidth = document.documentElement.clientWidth;
+    const windowScale = windowWidth/1080.0;
+    
+    const sectionPanelHeight = 48;
+    const sectionPanelSidePadding = 48;
+    
+    SetWidth("SectionPanel", windowWidth -sectionPanelSidePadding*windowScale*2+"px");
+    SetX("SectionPanel", sectionPanelSidePadding*windowScale+"px");
+    if (windowWidth > 512) {
+        SetHeight("SectionPanel", sectionPanelHeight*windowScale+"px");
+        SetY("SectionPanel", CFrontImageHeight*(windowWidth/CFrontImageWidth)-sectionPanelHeight*windowScale+"px");
+    } else {
+        SetHeight("SectionPanel", sectionPanelHeight*windowScale+4+"px");
+        SetY("SectionPanel", CFrontImageHeight*(windowWidth/CFrontImageWidth)-4-sectionPanelHeight*windowScale+"px");
+    }
+
+    SetX("LoveText", windowWidth*0.5+"px");
+    SetY("LoveText", 420*windowScale+"px");
+    
+    SetFontSize("LoveText1", 25*windowScale*0.5+25*0.5+"px");
+    SetFontSize("LoveText2", 17*windowScale*0.5+17*0.5+"px");
+
+    const buttonFontSize = 7*windowScale +12 +"px";
+    SetFontSize("JesusAndLoveButton", buttonFontSize);
+    SetFontSize("GodButton", buttonFontSize);
+    SetFontSize("CommandmentsButton", buttonFontSize);
+    SetFontSize("BaptismButton", buttonFontSize);
+    SetFontSize("AboutUsButton", buttonFontSize);
+}
+
+//*** Sections ***
+
 function Show(elementName) {
     document.getElementById(elementName).style.display = "block";
 }
@@ -41,6 +102,9 @@ function ShowSection(sectionName) {
     // Updating section url:
     const newUrl = window.location.pathname + '#' + sectionName;
     history.pushState({ section: sectionName }, '', newUrl);
+    
+    // Updating buttons layout because scroll bar might have disappeared/appeared, changing the document area:
+    UpdateButtonsLayout();
 }
 
 function GotoSection(sectionName) {
@@ -51,7 +115,7 @@ function GotoSection(sectionName) {
     });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+function InitSections() {
     HideAllSections();
     
     function showContentFromHash() {
@@ -70,62 +134,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Handling back/forward button presses:
     window.addEventListener("popstate", showContentFromHash);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    InitSections();
+    UpdateButtonsLayout();
 });
-
-//*** Buttons Layout ***
-
-function SetX(elementName, x) {
-    document.getElementById(elementName).style.left = x;
-}
-
-function SetY(elementName, y) {
-    document.getElementById(elementName).style.top = y;
-}
-
-function SetWidth(elementName, width) {
-    document.getElementById(elementName).style.width = width;
-}
-
-function SetHeight(elementName, height) {
-    document.getElementById(elementName).style.height = height;
-}
-
-function SetFontSize(elementName, fontSize) {
-    document.getElementById(elementName).style.fontSize = fontSize;
-}
-
-function UpdateButtonsLayout() {
-    const buttonWidth = 170;
-    const buttonHeight = 38;
-    const buttonMarginX = 25;
-    const buttonMarginY = 15;
-    const horizontalY = 500;
-    const verticalCenterY = 425;
-    const windowWidth = window.innerWidth;
-    const windowScale = windowWidth/1080.0;
-    
-    const sectionPanelHeight = 48;
-    let sectionPanelSidePadding = 48;
-    //if (window.innerWidth < 768)
-        //sectionPanelSidePadding = 0;
-    
-    SetWidth("SectionPanel", windowWidth -sectionPanelSidePadding*windowScale*2+"px");
-    SetX("SectionPanel", sectionPanelSidePadding*windowScale+"px");
-    SetHeight("SectionPanel", sectionPanelHeight*windowScale+"px");
-    SetY("SectionPanel", CFrontImageHeight*(windowWidth/CFrontImageWidth)-9-sectionPanelHeight*windowScale+"px");
-
-    SetX("LoveText", windowWidth*0.5+"px");
-    SetY("LoveText", 420*windowScale+"px");
-    
-    SetFontSize("LoveText1", 25*windowScale*0.5+25*0.5+"px");
-    SetFontSize("LoveText2", 17*windowScale*0.5+17*0.5+"px");
-
-    const buttonFontSize = 7*windowScale +12 +"px";
-    SetFontSize("JesusAndLoveButton", buttonFontSize);
-    SetFontSize("GodButton", buttonFontSize);
-    SetFontSize("CommandmentsButton", buttonFontSize);
-    SetFontSize("BaptismButton", buttonFontSize);
-    SetFontSize("AboutUsButton", buttonFontSize);
-}
-document.addEventListener('DOMContentLoaded', UpdateButtonsLayout);
 window.addEventListener('resize', UpdateButtonsLayout);
