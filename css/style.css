@@ -93,6 +93,8 @@
     text-align: center;
     
     transition: background-color 0.15s ease;
+    
+    padding: 0;
 }
 
 .sectionButton:hover {
