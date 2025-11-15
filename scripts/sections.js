@@ -67,6 +67,11 @@ function UpdateButtonsLayout() {
     SetFontSize("CommandmentsButton", buttonFontSize);
     SetFontSize("BaptismButton", buttonFontSize);
     SetFontSize("AboutUsButton", buttonFontSize);
+    
+    if (windowWidth >= 512)
+        SetWidth("LotusImage", "40%");
+    else
+        SetWidth("LotusImage", "50%");
 }
 
 //*** Sections ***
