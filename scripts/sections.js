@@ -62,8 +62,8 @@ function UpdateButtonsLayout() {
     else
         buttonFontSize = Mix(12, 7*windowScale +12, (windowWidth-300)/(400-300))+"px";
     SetFontSize("JesusButton", buttonFontSize);
+    SetFontSize("Jesus2Button", buttonFontSize);
     SetFontSize("LoveButton", buttonFontSize);
-    SetFontSize("GodButton", buttonFontSize);
     SetFontSize("CommandmentsButton", buttonFontSize);
     SetFontSize("BaptismButton", buttonFontSize);
     SetFontSize("AboutUsButton", buttonFontSize);
@@ -89,8 +89,8 @@ function Disable(elementName) {
 
 function HideAllSections() {
     Hide("JesusSection");
+    Hide("Jesus2Section");
     Hide("LoveSection");
-    Hide("GodSection");
     Hide("CommandmentsSection");
     Hide("BaptismSection");
     Hide("AboutUsSection");
