@@ -319,6 +319,25 @@ a:focus {
     -webkit-font-smoothing: antialiased;*/
 }
 
+.basicTextBI {
+	font-family: Basic;
+	font-style: italic;
+    /*font-size: 1.5vw;*/
+    font-size: 21px;
+	font-weight: 1000;
+    color: #2d343f;
+	/*color: #ffffff;*/
+	
+	/*-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: black;*/
+    /*text-shadow: 0 0 4px #0ff;*/
+    /*text-shadow: 0 0 4px #ffffff;*/
+    /*display:inline-block;*/
+
+   /*text-shadow: #ffffff 0px 0px 3px;
+    -webkit-font-smoothing: antialiased;*/
+}
+
 .basicTextDescribed {
    font-family: Basic;
    font-size: 21px;
