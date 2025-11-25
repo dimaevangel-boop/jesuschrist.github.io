@@ -68,10 +68,17 @@ function UpdateButtonsLayout() {
     SetFontSize("BaptismButton", buttonFontSize);
     SetFontSize("AboutUsButton", buttonFontSize);
     
-    if (windowWidth >= 512)
+    if (windowWidth >= 512) {
         SetWidth("LotusImage", "40%");
-    else
+        SetWidth("RunletImage", "35%");
+        SetWidth("SwansImage", "40%");
+        SetWidth("JesusImage", "40%");
+    } else {
         SetWidth("LotusImage", "50%");
+        SetWidth("RunletImage", "45%");
+        SetWidth("SwansImage", "50%");
+        SetWidth("JesusImage", "50%");
+    }
 }
 
 //*** Sections ***
