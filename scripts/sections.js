@@ -52,15 +52,19 @@ function UpdateButtonsLayout() {
 
     SetX("LoveText", windowWidth*0.5+"px");
     SetY("LoveText", 420*windowScale+"px");
+    SetFontSize("LoveText1", (25*windowScale*0.5+25*0.5)+"px");
+    SetFontSize("LoveText2", (17*windowScale*0.5+17*0.5)+"px");
     
-    SetFontSize("LoveText1", 25*windowScale*0.5+25*0.5+"px");
-    SetFontSize("LoveText2", 17*windowScale*0.5+17*0.5+"px");
-
     let buttonFontSize
-    if (windowWidth >= 400)
-        buttonFontSize = 7*windowScale +12 +"px";
-    else
-        buttonFontSize = Mix(12, 7*windowScale +12, (windowWidth-300)/(400-300))+"px";
+    if (windowWidth >= 400) {
+    //if (windowWidth >= 512) {
+        //buttonFontSize = 7*windowScale +15 +"px";
+        //buttonFontSize = "1.5vw";
+        buttonFontSize = (1.5 + 1/windowScale)*0.75 +"vw";
+    } else {
+        //buttonFontSize = Mix(12, 7*windowScale +12, (windowWidth-300)/(400-300))+"px";
+        buttonFontSize = "12px";
+    }
     SetFontSize("JesusButton", buttonFontSize);
     SetFontSize("Jesus2Button", buttonFontSize);
     SetFontSize("LoveButton", buttonFontSize);

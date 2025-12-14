@@ -72,11 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
         trigger.addEventListener('mouseenter', ShowTooltip);
         trigger.addEventListener('mouseleave', HideTooltip);
     });
-    triggers = document.querySelectorAll('.handwrittenTextSmallerDescribed');
-    triggers.forEach(trigger => {
-        trigger.addEventListener('mouseenter', ShowTooltip);
-        trigger.addEventListener('mouseleave', HideTooltip);
-    });
     triggers = document.querySelectorAll('.basicTextDescribed');
     triggers.forEach(trigger => {
         trigger.addEventListener('mouseenter', ShowTooltip);

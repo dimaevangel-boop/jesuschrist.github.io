@@ -1,25 +1,25 @@
 .floatedImageRight {
-  float: right; 
-  
-  margin-left: 2vw;
-  margin-right: 0;
-  margin-top: 0; 
-  margin-bottom: 1vw;
-
-  width: 40%;
-  height: auto;
+    float: right;
+    
+    margin-left: 2vw;
+    margin-right: 0;
+    margin-top: 0; 
+    margin-bottom: 1vw;
+    
+    width: 40%;
+    height: auto;
 }
 
 .floatedImageLeft {
-  float: left; 
-  
-  margin-left: 0;
-  margin-right: 2.5vw;
-  margin-top: 0; 
-  margin-bottom: 1vw;
-
-  width: 35%;
-  height: auto;
+    float: left;
+    
+    margin-left: 0;
+    margin-right: 2.5vw;
+    margin-top: 0; 
+    margin-bottom: 1vw;
+    
+    width: 35%;
+    height: auto;
 }
 
 #LoveText {
@@ -31,8 +31,8 @@
 .gotoButton {
     border: none;
     
-    font-size: 23px;
-    color: #39a5e6;
+    font-size: 25px;
+    color: rgb(125, 175, 255);
     font-family: Handwriting;
     font-weight: 1000;
     
@@ -42,7 +42,7 @@
 }
 
 .gotoButton:hover {
-    color: #2e79a5;
+    color: #39a5e6;
 
     transition: background-color 0.0s ease;
     
@@ -80,7 +80,7 @@
 .sectionButton {
     border: none;
     
-    font-family: Basic;
+    font-family: BasicTall;
     font-size: 21px;
     font-weight: 100;
     color: white;
@@ -137,6 +137,11 @@
 
 @font-face {
     font-family: "Basic";
+    src: url(../fonts/Garet-Book.ttf);
+}
+
+@font-face {
+    font-family: "BasicTall";
     src: url(../fonts/tilda-sans_light.ttf);
 }
 
@@ -201,9 +206,9 @@ a:focus {
 
 	line-height: 100%;
 	
-	font-size: 18px;
+	font-size: 17px;
 	
-	background-color: #e2ffea;
+	background-color: rgb(240, 230, 255);
 	color: #4d5d76;
 	text-align: center;
 	border-radius: 6px;
@@ -302,10 +307,10 @@ a:focus {
 .basicText p {
     font-family: Basic;
     /*font-size: 1.5vw;*/
-    font-size: 21px;
-    font-weight: 100;
+    font-size: 22px;
+    font-weight: 300;
     /*color: #2d343f;*/
-    color: #4d5d76;
+    color: #d0d0d0;
     /*color: #4c5c76;*/
     /*color: #ffffff;*/
 
@@ -323,7 +328,7 @@ a:focus {
 	font-family: Basic;
 	font-style: italic;
     /*font-size: 1.5vw;*/
-    font-size: 21px;
+    font-size: 22px;
 	font-weight: 1000;
     color: #2d343f;
 	/*color: #ffffff;*/
@@ -340,7 +345,7 @@ a:focus {
 
 .basicTextDescribed {
    font-family: Basic;
-   font-size: 21px;
+   font-size: 22px;
    font-weight: 100;
    /*color: #4d5d76;
    text-decoration-line: underline;
@@ -348,12 +353,12 @@ a:focus {
 	text-decoration-thickness: 1px;
 	text-underline-offset: 2px;*/
     
-    color: #2caa81;
+    color: rgb(185, 150, 225);
 }
 
 .basicTextDescribed:hover {
    font-family: Basic;
-   font-size: 21px;
+   font-size: 22px;
    font-weight: 100;
 
    text-decoration-line: underline;
@@ -363,21 +368,117 @@ a:focus {
 }
 
 .handwrittenText {
-    font-size: 23px;
-    color: #2d343f;
+    font-size: 25px;
+    color: #fff;
     font-family: Handwriting;
     font-weight: 1000;
+
+   text-shadow: #222 0px 0px 8px;
+    -webkit-font-smoothing: antialiased;
 }
 
-.handwrittenTextSmaller {
-    font-size: 21px;
-    color: #2d343f;
+.handwrittenTextLight {
+    font-size: 25px;
+    color: #fafafa;
     font-family: Handwriting;
     font-weight: 1000;
+
+   text-shadow: #fafafa 0px 0px 8px;
+    -webkit-font-smoothing: antialiased;
 }
 
-.handwrittenTextWhite {
-    font-size: 23px;
+.handwrittenTextLightSoft {
+    font-size: 25px;
+    color: #f8f8f8;
+    font-family: Handwriting;
+    font-weight: 1000;
+
+   text-shadow: #eee 0px 0px 8px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.handwrittenTextLightBright {
+    font-size: 25px;
+    color: #fff;
+    font-family: Handwriting;
+    font-weight: 1000;
+
+   text-shadow: #fff 0px 0px 8px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.handwrittenTextLightGray {
+    font-size: 25px;
+    color: #ddd;
+    font-family: Handwriting;
+    font-weight: 1000;
+
+   text-shadow: #ddd 0px 0px 8px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.handwrittenTextRed {
+    font-size: 25px;
+    color: rgb(237, 7, 80);
+    font-family: Handwriting;
+    font-weight: 1000;
+
+   text-shadow: rgb(40, 21, 21) 0px 0px 8px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.handwrittenTextBlue {
+    font-size: 25px;
+    color: #39a5e6;
+    font-family: Handwriting;
+    font-weight: 1000;
+
+   text-shadow: rgb(25, 50, 75) 0px 0px 8px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.handwrittenTextGreen {
+    font-size: 25px;
+    color: rgb(0, 170, 0);
+    font-family: Handwriting;
+    font-weight: 1000;
+
+   text-shadow: rgb(25, 75, 25) 0px 0px 8px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.handwrittenTextCyan {
+    font-size: 25px;
+    color: rgb(175, 255, 255);
+    font-family: Handwriting;
+    font-weight: 1000;
+
+   text-shadow: rgb(25, 75, 75) 0px 0px 8px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.handwrittenTextGolden {
+    font-size: 25px;
+    color: rgb(188, 188, 85);
+    font-family: Handwriting;
+    font-weight: 1000;
+
+   text-shadow: rgb(75, 75, 25) 0px 0px 8px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.handwrittenTextGoldenLight {
+    font-size: 25px;
+    color: rgb(255, 255, 200);
+    font-family: Handwriting;
+    font-weight: 1000;
+
+   text-shadow: rgb(255, 255, 200) 0px 0px 8px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.handwrittenTextTitle {
+    font-size: 25px;
     color: #fff;
     font-family: Handwriting;
     font-weight: 1000;
@@ -386,47 +487,24 @@ a:focus {
     -webkit-font-smoothing: antialiased;
 }
 
-.handwrittenTextSmallerWhite {
-    font-size: 21px;
+.handwrittenTextTitleSmaller {
+    font-size: 25px;
     color: #fff;
     font-family: Handwriting;
     font-weight: 1000;
 
    text-shadow: #ccc 2px 2px 2px;
     -webkit-font-smoothing: antialiased;
-}
-
-.handwrittenTextSmaller2 {
-    /*font-size: 1.53vw;*/
-    font-size: 20px;
-    /*color: #61728e;*/
-    /*color: #ccdd55;*/
-    /*color: #ddee77;*/
-    /*color: #000000;*/
-    color: #2d343f;
-    /*text-shadow: 0 0 4px #0ff;*/
-    /*text-shadow: 0 0 4px #ffffff;*/
-    font-family: Handwriting;
-    font-weight: 1000;
-
-	/*-webkit-text-stroke-width: 1px;
-	-webkit-text-stroke-color: black;*/
-
-    /*-webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 3px black;*/
-     
-   /*text-shadow: #000 0px 0px 2px;
-    -webkit-font-smoothing: antialiased;*/
 }
 
 .handwrittenTextDescribed {
     /*font-size: 1.53vw;*/
-    font-size: 23px;
+    font-size: 25px;
     /*color: #61728e;*/
     /*color: #ccdd55;*/
     /*color: #ddee77;*/
     /*color: #000000;*/
-    color: #29916f;
+    color: rgb(185, 150, 225);
     /*text-shadow: 0 0 4px #0ff;*/
     /*text-shadow: 0 0 4px #ffffff;*/
     font-family: Handwriting;
@@ -443,20 +521,6 @@ a:focus {
 }
 
 .handwrittenTextDescribed:hover {
-   text-decoration-line: underline;
-	text-decoration-style: wavy;
-	text-decoration-thickness: 2px;
-	text-underline-offset: 2px;
-}
-
-.handwrittenTextSmallerDescribed {
-    font-size: 21px;
-    color: #29916f;
-    font-family: Handwriting;
-    font-weight: 1000;
-}
-
-.handwrittenTextSmallerDescribed:hover {
    text-decoration-line: underline;
 	text-decoration-style: wavy;
 	text-decoration-thickness: 2px;
