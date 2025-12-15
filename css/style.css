@@ -457,6 +457,16 @@ a:focus {
     -webkit-font-smoothing: antialiased;
 }
 
+.handwrittenTextTeal {
+    font-size: 25px;
+    color: rgb(175, 255, 200);
+    font-family: Handwriting;
+    font-weight: 1000;
+
+   text-shadow: rgb(25, 75, 75) 0px 0px 8px;
+    -webkit-font-smoothing: antialiased;
+}
+
 .handwrittenTextGolden {
     font-size: 25px;
     color: rgb(188, 188, 85);
