@@ -155,6 +155,11 @@
     src: url(../fonts/Involve-Regular.ttf);
 }
 
+@font-face {
+    font-family: "Large";
+    src: url(../fonts/Galderglynn-Titling-Th.otf);
+}
+
 /* Common */
 
 html {
@@ -169,6 +174,15 @@ p {
     font-size: 1vw;
     letter-spacing: 0px;
     line-height: 2.3;
+    color: #999;
+
+    margin-top: 1vw;
+}
+
+.aboutUs {
+    font-size: 1vw;
+    letter-spacing: 0px;
+    line-height: 2;
     color: #999;
 
     margin-top: 1vw;
@@ -306,22 +320,73 @@ a:focus {
 
 .basicText p {
     font-family: Basic;
-    /*font-size: 1.5vw;*/
     font-size: 22px;
     font-weight: 300;
-    /*color: #2d343f;*/
     color: #d0d0d0;
-    /*color: #4c5c76;*/
-    /*color: #ffffff;*/
+}
 
-	/*-webkit-text-stroke-width: 1px;
-	-webkit-text-stroke-color: black;*/
-    /*text-shadow: 0 0 4px #0ff;*/
-    /*text-shadow: 0 0 4px #ffffff;*/
-    /*display:inline-block;*/
+.basicTextMail {
+    font-family: Basic;
+    font-size: 16px;
+    font-weight: 300;
+    color: #d0d0d0;
+}
 
-   /*text-shadow: #ffffff 0px 0px 3px;
-    -webkit-font-smoothing: antialiased;*/
+.basicTextTelegram {
+    font-family: Basic;
+    font-size: 36px;
+    font-weight: 300;
+    color: #d0d0d0;
+}
+
+.basicTextBlue {
+    font-family: Basic;
+    font-size: 22px;
+    font-weight: 300;
+    color: #39a5e6;
+}
+
+.basicTextLarge {
+    font-family: Basic;
+    font-size: 25px;
+    font-weight: 300;
+    color: #d0d0d0;
+}
+
+.basicTextLargeBlue {
+    font-family: Basic;
+    font-size: 25px;
+    font-weight: 300;
+    color: #39a5e6;
+}
+
+.basicTextLargeBlueBreakable {
+    font-family: Basic;
+    font-size: 25px;
+    font-weight: 300;
+    color: #39a5e6;
+    overflow-wrap: break-word;
+}
+
+.basicTextLargeThick {
+    font-family: Basic;
+    font-size: 25px;
+    font-weight: 800;
+    color: #d0d0d0;
+}
+
+.largeTextCapital {
+    font-family: Large;
+    font-size: 37px;
+    font-weight: 300;
+    color: #d0d0d0;
+}
+
+.largeText {
+    font-family: Large;
+    font-size: 28px;
+    font-weight: 300;
+    color: #d0d0d0;
 }
 
 .basicTextBI {
@@ -424,6 +489,16 @@ a:focus {
     font-weight: 1000;
 
    text-shadow: rgb(40, 21, 21) 0px 0px 8px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.handwrittenTextFire {
+    font-size: 25px;
+    color: rgb(255, 155, 55);
+    font-family: Handwriting;
+    font-weight: 1000;
+
+   text-shadow: rgb(255, 155, 0) 0px 0px 8px;
     -webkit-font-smoothing: antialiased;
 }
 
