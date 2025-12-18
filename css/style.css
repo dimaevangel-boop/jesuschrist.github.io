@@ -389,6 +389,30 @@ a:focus {
     color: #d0d0d0;
 }
 
+.largeTextLightCapital {
+    font-family: Large;
+    font-size: 37px;
+    font-weight: 300;
+    color: #f8f8f8;
+
+   text-shadow: #eee 0px 0px 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.largeTextWhiteCapital {
+    font-family: Large;
+    font-size: 37px;
+    font-weight: 300;
+    color: #f8f8f8;
+}
+
+.largeTextWhite {
+    font-family: Large;
+    font-size: 28px;
+    font-weight: 300;
+    color: #f8f8f8;
+}
+
 .basicTextBI {
 	font-family: Basic;
 	font-style: italic;
